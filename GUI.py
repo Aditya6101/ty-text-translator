@@ -2,7 +2,10 @@ import tkinter as tk
 
 root = tk.Tk()
 
-root.geometry("500x500")
+root.geometry('500x400')
+
+root.update()
+# root.geometry("500x500")
 
 root.title('Text Translator')
 

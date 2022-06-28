@@ -3,6 +3,9 @@
 - [gTTS 2.2.4](https://duckduckgo.comhttps://pypi.org/project/gTTS/)
 <pre><code>pip install gTTS</code></pre>
 
+- [googletrans 3.0.0](https://pypi.org/project/googletrans/)
+<pre><code>pip install googletrans</code></pre>
+
 - [playsound 1.2.2](https://pypi.org/project/playsound/)
 <pre><code>pip install playsound==1.2.2</code></pre>
 

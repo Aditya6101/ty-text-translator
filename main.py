@@ -4,15 +4,25 @@ import os
 
 # importing custom module
 import lang
+import translate
 
 # prompt user to enter the text to be converted
-text = """DALL·E[1]
-We decided to name our model using a portmanteau of the artist Salvador Dalí and Pixar’s WALL·E. is a 12-billion parameter version of GPT-3 trained to generate images from text descriptions, using a dataset of text–image pairs. We’ve found that it has a diverse set of capabilities, including creating anthropomorphized versions of animals and objects, combining unrelated concepts in plausible ways, rendering text, and applying transformations to existing images."""
+text_to_convert = """Il tramonto è l'ora del giorno in cui il nostro cielo incontra i venti solari dello spazio esterno."""
+
 
 # detect the language of entered text
-language = lang.detect_language(text)
+from_language = lang.detect_language(text_to_convert)
+to_language = 'tr'
 
-obj = gTTS(text=text, lang=language, slow=False, tld="co.in")
+# convert the text to english
+text_to_read = translate.translate_text(
+    text_to_convert, from_language, to_language)
+text = text_to_read.text
+
+print(text_to_convert)
+print(text)
+
+obj = gTTS(text=text, lang=to_language, slow=False, tld="co.in")
 
 obj.save("speech.mp3")
 
